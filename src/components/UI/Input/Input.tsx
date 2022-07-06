@@ -13,8 +13,13 @@ const Input: FC<InputProps> = (props) => {
   const classNames: string[] = [classes.input, props.additionalClass ?? '']
 
   return (
-    <input value={props.value} className={classNames.join('')} type={props.type} placeholder={props.placeholder}
-           onChange={props.onChangeHandler}/>
+    <input
+      value={props.value}
+      className={classNames.join('')}
+      type={props.type}
+      placeholder={props.placeholder}
+      onChange={props.onChangeHandler}
+    />
   )
 }
 

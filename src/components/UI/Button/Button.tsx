@@ -17,7 +17,10 @@ const Button: FC<ButtonProps> = (props) => {
   const classNames: string[] = [classes.btn, props.color]
 
   return (
-    <button onClick={props.clickHandler} className={classNames.join(' ')}>
+    <button
+      onClick={props.clickHandler}
+      className={classNames.join(' ')}
+    >
       {props.children}
     </button>
   )
