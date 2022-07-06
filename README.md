@@ -1,4 +1,8 @@
-# Start react app
+# Project stack:
+### `Sass`
+### `Mobx`
+### `TypeScript`
+### `React`
 
 ## Install dependencies
 ### `npm install`
