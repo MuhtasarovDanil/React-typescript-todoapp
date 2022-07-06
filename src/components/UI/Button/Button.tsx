@@ -8,15 +8,16 @@ export enum Colors {
 
 interface ButtonProps {
   children: ReactNode,
-  color: Colors
+  color: Colors,
+  clickHandler?: () => void,
 }
 
 const Button: FC<ButtonProps> = (props) => {
-  /* TODO: REFACTOR */
+  /* TODO REFACTOR */
   const classNames: string[] = [classes.btn, props.color]
 
   return (
-    <button className={classNames.join(' ')}>
+    <button onClick={props.clickHandler} className={classNames.join(' ')}>
       {props.children}
     </button>
   )

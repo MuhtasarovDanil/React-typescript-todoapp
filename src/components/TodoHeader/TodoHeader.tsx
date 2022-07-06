@@ -6,8 +6,8 @@ import classes from './todoheader.module.sass'
 const TodoHeader: FC = () => {
   return (
     <div className='container'>
-      <form className={classes.form}>
-        <Input placeholder={'Добавить задачу'} />
+      <form className={classes.form} onSubmit={e => e.preventDefault()}>
+        <Input placeholder={'Добавить задачу'}/>
         <Button color={Colors.green}>Добавить</Button>
       </form>
     </div>
