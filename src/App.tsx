@@ -14,7 +14,7 @@ const App: FC = observer(() => {
         <TodoHeader/>
       </section>
       <div className="container">
-        <h2 style={{color: 'black', textAlign: 'center'}}>Список задач</h2>
+        <h2 className="task__title">Список задач</h2>
         {SelectStore.selectedOption === 'all' &&
           <TodoList taskData={TaskStore.allTasks} />
         }

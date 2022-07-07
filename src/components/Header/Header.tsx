@@ -1,11 +1,10 @@
 import {FC} from 'react'
-import classes from './header.module.sass'
 
 const Header: FC = () => {
   return (
-    <header className={classes.header}>
+    <header className='header'>
       <div className="container">
-        <a href="#" className={classes.logo}>&copy; MuhtasarovDanil</a>
+        <a href="#" className='logo'>&copy; MuhtasarovDanil</a>
       </div>
     </header>
   )

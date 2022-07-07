@@ -1,4 +1,15 @@
-/* TODO: CREATE SASS REFACTOR */
+@import 'sass/vendor/mixins'
+@import 'sass/vendor/variables'
+
+@import 'sass/ui/button'
+@import 'sass/ui/select'
+@import 'sass/ui/input'
+
+@import 'sass/blocks/header'
+@import 'sass/blocks/todoheader'
+@import 'sass/blocks/todo'
+@import 'sass/blocks/task'
+
 *, *::after, *::before
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
@@ -32,14 +43,7 @@ button
   margin: 0 auto
   padding: 0 1.5rem
 
-.center
-  margin: 0 auto
+.task__title
+  font-size: 4rem
+  text-align: center
 
-/* TODO: REFACTOR */
-.green
-  background-color: #28a745
-  border: 1px solid #28a745
-
-.red
-  background-color: #dc3545
-  border: 1px solid #dc3545

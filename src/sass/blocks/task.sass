@@ -1,0 +1,21 @@
+@import '../vendor/variables'
+@import '../vendor/mixins'
+
+.task
+  @include formElement(1rem 3rem, 70%)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: $primary-black
+  color: $white
+  border-radius: 0.25rem
+  margin: 20px auto
+
+  &:first-child
+    margin-top: 0
+
+.task-group
+  display: flex
+
+.task-group__task
+  margin-left: 10px

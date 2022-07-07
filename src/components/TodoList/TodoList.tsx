@@ -1,5 +1,4 @@
 import {FC} from 'react'
-import classes from './todolist.module.sass'
 import TodoItem from '../TodoItem/TodoItem'
 import {observer} from 'mobx-react-lite'
 import ITodo from '../../types/ITodo'
@@ -11,8 +10,7 @@ interface TodoListProps {
 const TodoList: FC<TodoListProps> = observer(({taskData}) => {
   return (
     <ul
-      className={classes.todo}
-      style={{marginTop: '50px'}}
+      className='todo'
     >
       {taskData.map(todo =>
         <TodoItem

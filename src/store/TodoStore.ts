@@ -1,7 +1,6 @@
 import {makeAutoObservable} from 'mobx'
 import ITodo from '../types/ITodo'
 
-/* TODO: DEEP REFACTOR */
 class TodoStore {
   public todos: ITodo[] = [
     {
@@ -13,7 +12,7 @@ class TodoStore {
       id: 2,
       isComplete: false,
       task: 'Second task'
-    },
+    }
   ]
 
   public completedTodos: ITodo[] = []
@@ -47,7 +46,7 @@ class TodoStore {
     this.deleteTodo(todo.id)
     todo.isComplete
       ? this.completedTodos.push(todo)
-      : this.todos.push(todo)
+      : this.addTodo(todo)
   }
 }
 

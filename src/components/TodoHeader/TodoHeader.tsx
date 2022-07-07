@@ -1,33 +1,32 @@
-import {FC, useState} from 'react'
+import {FC} from 'react'
 import Input from '../UI/Input/Input'
 import Button, {Colors} from '../UI/Button/Button'
-import classes from './todoheader.module.sass'
 import TodoStore from '../../store/TodoStore'
 import Select from '../UI/Select/Select'
 import SelectStore from '../../store/SelectStore'
+import TaskStore from '../../store/TaskStore'
 import {observer} from 'mobx-react-lite'
 
 const TodoHeader: FC = observer(() => {
-  /* TODO: MOBX STATES */
-  const [task, setTask] = useState('')
+  const submitTask = (): void => {
+    const newTodoItem = {id: Date.now(), task: TaskStore.task, isComplete: false}
+
+    TodoStore.addTodo(newTodoItem)
+    TaskStore.clearTask()
+  }
 
   return (
     <div className='container'>
       <form
-        className={classes.form}
+        className='form'
         onSubmit={e => e.preventDefault()}>
         <Input
-          value={task}
+          value={TaskStore.task}
           placeholder={'Добавить задачу'}
-          onChangeHandler={e => setTask(e.target.value)}
+          onChangeHandler={e => TaskStore.changeTask(e.target.value)}
         />
         <Button
-          clickHandler={() => {
-              const newTask = {id: Date.now(), task: task, isComplete: false}
-              TodoStore.addTodo(newTask)
-              setTask('')
-            }
-          }
+          clickHandler={submitTask}
           color={Colors.green}>
           Добавить
         </Button>

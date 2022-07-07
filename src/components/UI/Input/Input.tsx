@@ -1,5 +1,4 @@
 import {FC, ChangeEvent} from 'react'
-import classes from './input.module.sass'
 
 interface InputProps {
   placeholder: string,
@@ -10,12 +9,12 @@ interface InputProps {
 }
 
 const Input: FC<InputProps> = (props) => {
-  const classNames: string[] = [classes.input, props.additionalClass ?? '']
+  const classNames: string = ['input', props.additionalClass ?? ''].join(' ')
 
   return (
     <input
       value={props.value}
-      className={classNames.join('')}
+      className={classNames}
       type={props.type}
       placeholder={props.placeholder}
       onChange={props.onChangeHandler}

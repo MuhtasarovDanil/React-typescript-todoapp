@@ -1,6 +1,6 @@
 interface ISelect {
   value: string,
-  text: string,
+  text: string
 }
 
 export default ISelect
